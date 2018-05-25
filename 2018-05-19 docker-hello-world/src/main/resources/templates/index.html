@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Title</title>
+    <link href="../static/css/Layout.css" th:href="@{/css/Layout.css}" rel="stylesheet" />
+</head>
+<body>
+			<h2>
+				<span th:text="'I am: ' + ${name}"></span>
+				<span th:text="'on IP: ' + ${ip}"></span>
+			</h2>
+	
+			<div>
+			  <th:block th:each="file : ${listOfFiles}">
+			    <div>
+			        <span th:text="${file.name}">...</span>
+			    </div>
+			    <div>
+			        <pre th:text="${file.content}">...</pre>
+			    </div>
+			  </th:block>
+			</div>
+
+</body>
+</html>
